@@ -33,7 +33,7 @@
   "description": "Personalized landscape design and construction serving the Upper Valley of Vermont and New Hampshire. Patios, outdoor kitchens, retaining walls, walkways and lighting.",
   "slogan": "Outdoor living, built to last.",
   "telephone": "+1-802-547-3371",
-  "email": "maginnislandscapecontracting@gmail.com",
+  "email": "hello@maginnislandscapecontracting.com",
   "founder": { "@type": "Person", "name": "Will Maginnis" },
   "sameAs": [ "https://www.instagram.com/maginnislandscapecontracting/" ],
   "knowsAbout": [ "Landscape design", "Hardscape construction", "Paver patios", "Fire pits", "Retaining walls", "Outdoor kitchens", "Landscape lighting", "Walkways", "3-D landscape design" ],
@@ -327,7 +327,7 @@
         <p style="font-size: 17px; line-height: 28px; max-width: 54ch; margin: 16px 0 0; font-weight: 600;">Feel free to contact us anytime to schedule a consultation and begin the design process.</p>
         <div style="display: flex; flex-direction: column; gap: 12px; align-items: flex-start; margin-top: 32px;">
           <a href="tel:+18025473371" class="btn btn-secondary" style="text-decoration: none;">Call us · (802) 547-3371</a>
-          <a href="mailto:maginnislandscapecontracting@gmail.com" class="btn btn-ghost" style="text-decoration: none;">Email us · maginnislandscapecontracting@gmail.com</a>
+          <a href="mailto:hello@maginnislandscapecontracting.com" class="btn btn-ghost" style="text-decoration: none;">Email us · hello@maginnislandscapecontracting.com</a>
           <a href="https://www.instagram.com/maginnislandscapecontracting/" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" style="text-decoration: none;">Follow our work on Instagram</a>
         </div>
       </div>
@@ -357,7 +357,7 @@
           <p id="consult-error" role="alert" hidden style="margin: 0; padding: 10px 14px; border-radius: var(--radius-md); background: var(--color-accent-200); color: var(--color-accent-900); font-size: 14px;"></p>
           <button type="submit" class="btn btn-primary btn-block">Request a consultation</button>
         </form>
-        <div id="consult-thanks" hidden style="display: flex; flex-direction: column; gap: 16px; padding: 24px 0;">
+        <div id="consult-thanks" style="display: none; flex-direction: column; gap: 16px; padding: 24px 0;">
           <div aria-hidden="true" style="width: 56px; height: 56px; border-radius: 50%; background: var(--color-accent-2-200); color: var(--color-accent-2-900); display: grid; place-content: center;">
             <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Submitted"><path d="M20 6 9 17l-5-5"></path></svg>
           </div>
@@ -416,7 +416,7 @@
         .then(function (res) {
           if (res.ok) {
             form.hidden = true;
-            thanks.hidden = false;
+            thanks.style.display = 'flex';
           } else {
             return res.json().then(function (j) {
               var msg = (j && j.errors && j.errors.map(function (x) { return x.message; }).join(', ')) || 'Something went wrong. Please try again or email us directly.';
@@ -442,7 +442,7 @@
         btn.style.borderColor = 'var(--color-neutral-300)';
       });
       if (errBox) errBox.hidden = true;
-      thanks.hidden = true;
+      thanks.style.display = 'none';
       form.hidden = false;
     });
   })();
