@@ -415,7 +415,7 @@
       fetch(form.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } })
         .then(function (res) {
           if (res.ok) {
-            form.hidden = true;
+            form.style.display = 'none';
             thanks.style.display = 'flex';
           } else {
             return res.json().then(function (j) {
@@ -443,7 +443,7 @@
       });
       if (errBox) errBox.hidden = true;
       thanks.style.display = 'none';
-      form.hidden = false;
+      form.style.display = 'flex';
     });
   })();
 
